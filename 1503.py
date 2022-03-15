@@ -1,8 +1,11 @@
 from flask import Flask
 import os
+
 # from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+
+
 # run_with_ngrok(app)
 
 
@@ -12,5 +15,5 @@ def index():
 
 
 if __name__ == '__main__':
-    port = os.environ.get('PORT', 5000)
-    app.run(port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
